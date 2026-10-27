@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вопрос Aski Haski</title>
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+     <header class="class-header">
+        <div class="logo">
+             <a href="index.html">Aski Haski</a>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Поиск">
+        </div>
+        <div class="header-actions">
+            <a href="ask.html">Задать вопрос</a>
+            <a href="login.html">Войти</a>
+            <a href="signup.html">Регистрация</a>
+        </div>
+    </header>
+    <main>
+        <div class="question-main">
+            <section class="question-page">
+                <h2>Вопрос</h2>
+
+                <article>
+                        <div class="question-content">
+                            <img src="static/img/avatar.png" alt="Аватар автора" width="60">
+
+                            <div class="question-text">
+                                <h3>
+                                    <a href="question.html">Опишите структуру виртуального адресного пространства процесса в архитектуре x86?</a>
+                                </h3>
+
+                                <p>Мне нужно сверху вниз описать структуру виртуального адресного пространства процесса в архитектуре x86.</p>
+                                <p>
+                                    Теги:
+                                    <a href="tag.html">OS</a>
+                                    <a href="tag.html">x86</a>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="votes">
+                            <span class="vote-count">5</span>
+                            <button type="button" class="vote-button liked">+</button>
+                            <button type="button" class="vote-button">-</button>
+                        </div>
+                </article>
+            </section>
+            <section class="answers">
+                <h2>Ответы</h2>
+
+                <article class="answer">
+                    <div class="answer-content">
+                        <img src="static/img/avatar3.png" alt="Аватар автора" width="60">
+                        <div class="question-text">
+                            <h3>Ответ пользователя Anna</h3>
+                            <p>Kernel space, stack, memory mapping segment,heap, bss, data segment, text segment.</p>
+                        <label>
+                            <input type="checkbox" checked>
+                            Правильный ответ
+                        </label>
+                        </div>
+                    </div>
+                    <div class="votes">
+                            <span class="vote-count">5</span>
+                            <button type="button" class="vote-button liked">+</button>
+                            <button type="button" class="vote-button">-</button>
+                    </div>
+                </article>
+                <article class="answer">
+                    <div class="answer-content">
+                        <img src="static/img/avatar4.png" alt="Аватар автора" width="60">
+                        <div class="question-text">
+                            <h3>Ответ пользователя Alex</h3>
+                            <p>Виртуальное адресное пространство процесса в архитектуре x86 состоит из нескольких сегментов: текстовый сегмент (код программы), сегмент данных (глобальные и статические переменные), сегмент стека (локальные переменные и вызовы функций), сегмент кучи (динамически выделяемая память) и сегмент памяти ядра (для системных вызовов и работы с оборудованием).</p>
+                            <label>
+                                <input type="checkbox">
+                                Правильный ответ
+                            </label>
+                        </div>
+                    </div>
+                    <div class="votes">
+                            <span class="vote-count">5</span>
+                            <button type="button" class="vote-button liked">+</button>
+                            <button type="button" class="vote-button">-</button>
+                    </div>
+                </article>
+            <form>
+                <label for="answer">Ваш ответ:</label>
+
+                <textarea id="answer" name="answer" rows="5"></textarea>
+
+                <button type="submit">Ответить</button>
+            </form>
+            <div class="pagination">
+                <a href="#">1</a>
+                <a href="#"class="active">2</a>
+                <a href="#">3</a>
+                <a href="#">4</a>
+                <a href="#">5</a>
+            </div>
+            </section>
+        </div>
+        <aside class="sidebar">
+                <h2>Популярные теги</h2>
+                <p>Python, HTML, CSS, C++</p>
+
+                <h2>Лучшие участники</h2>
+                <p>Кто-то</p>
+        </aside>
+    </main>
+</body>
+</html>
