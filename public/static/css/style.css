@@ -1,0 +1,110 @@
+body{
+    background-color: white;
+    font-family: "Times New Roman", serif;
+}
+h1{
+    color:midnightblue;
+}
+a{
+    color:midnightblue;
+    text-decoration: none;
+}
+article{
+    background-color:aliceblue;
+    padding: 20px;
+    margin-bottom: 15px;
+    border: 1px solid #dddddd;
+    border-radius: 10px;
+}
+.class-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+.header-actions{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo a {
+    color: midnightblue;
+    font-size: 28px;
+    font-weight: bold;
+    text-decoration: none;
+}
+.search-bar {
+    background-color: aliceblue;
+    padding: 5px 10px;
+    border-radius: 8px;
+    color:darkcyan;
+    flex: 1;
+}
+.search-bar input {
+    color:darkcyan;
+    width: 100%;
+    padding: 10px;
+}
+.header-actions a {
+    color: white;
+    background-color: midnightblue;
+    padding: 10px 15px;
+    border-radius: 8px;
+    text-decoration: none;
+}
+main {
+    display: flex;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.questions {
+    flex: 2;
+    min-width: 0;
+}
+
+.sidebar {
+    flex: 1;
+    min-width: 0;
+}
+article img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+}
+.votes {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+.votes button {
+    background-color: aliceblue;
+    padding: 6px 12px;
+    cursor: pointer;
+    border-radius: 8px;
+    color: rgb(0, 0, 0);
+    border: 1px solid rgb(166, 166, 195);
+}
+.question-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+.vote-button.liked {
+    background-color: midnightblue;
+    color: white;
+}
+.vote-button.disliked {
+    background-color: lightgray;
+    color: darkgray;
+}
+
+.pagination .active {
+    background-color: midnightblue;
+    color: white;
+    border: 1px solid midnightblue;
+    
+}
