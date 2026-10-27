@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Новый вопрос Aski Haski</title>
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+     <header class="class-header">
+        <div class="logo">
+             <a href="index.html">Aski Haski</a>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Поиск">
+        </div>
+        <div class="header-actions">
+            <a href="ask.html">Задать вопрос</a>
+            <a href="login.html">Войти</a>
+            <a href="signup.html">Регистрация</a>
+        </div>
+    </header>
+    <main>
+        <section class="ask-page">
+            <h2>Новый вопрос</h2>
+             <form>
+                <label for="question-title">Заголовок вопроса:</label>
+                <input type="text"
+                    id="question-title"
+                    name="question-title"
+                    maxlength="150"
+                    placeholder="Кратко сформулируйте вопрос"
+                    required>
+                <small>Максимум 150 символов.</small>
+
+                <label for="question-text">Текст вопроса:</label>
+                <textarea id="question-text" name="question-text" rows="5" required></textarea>
+
+                <label for="question-tags">Теги (через запятую):</label>
+                <input type="text" id="question-tags" name="question-tags">
+                <button type="submit">Отправить вопрос</button>
+            </form>
+        </section>
+        <aside class="sidebar">
+            <h2>Популярные теги</h2>
+            <p>Python, HTML, CSS, C++</p>
+
+            <h2>Лучшие участники</h2>
+            <p>Кто-то</p>
+        </aside>
+    </main>
+</body>
+</html>
