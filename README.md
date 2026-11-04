@@ -5,8 +5,11 @@
 ## Как запустить
 
 1. Склонировать репозиторий.
-2. Открыть файл `public/index.html` в браузере.
+2. Перейти в корень проекта.
+3. Запустить локальный сервер (для Linux):
 
+   ```bash
+   python3 -m http.server 8000 --directory public
 ## Страницы
 
 - `public/index.html` - список вопросов;
@@ -16,9 +19,3 @@
 - `public/signup.html` - регистрация;
 - `public/profile.html` - настройки профиля;
 - `public/base.html` - пример общего макета страницы.
-
-## Технологии
-
-- HTML5;
-- CSS3;
-- Bootstrap 5.
