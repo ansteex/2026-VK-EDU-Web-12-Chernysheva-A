@@ -10,6 +10,8 @@
 
    ```bash
    python3 -m http.server 8000 --directory public
+   ```
+4. Открыть http://localhost:8000 в браузере.
 ## Страницы
 
 - `public/index.html` - список вопросов;
