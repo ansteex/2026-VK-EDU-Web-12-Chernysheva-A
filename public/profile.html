@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Aski Haski</title>
+
+    <link rel="stylesheet" href="static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+    <header class="class-header">
+        <div class="logo">
+             <a href="index.html">Aski Haski</a>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Поиск">
+        </div>
+        <div class="header-actions">
+            <a href="ask.html">Задать вопрос</a>
+            <a href="profile.html">Anna</a>
+            <a href="login.html">Выйти</a>
+        </div>
+    </header>
+    <main>
+        <section class="profile-page">
+            <h1>Настройки профиля</h1>
+
+            <form>
+                <p>Текущая аватарка:</p>
+                <img src="static/img/avatar.png"
+                    class="profile-avatar"
+                    alt="Текущая аватарка пользователя">
+
+                <div>
+                    <label for="profile-email" class="form-label">
+                        Email
+                    </label>
+                    <input
+                        type="email"
+                        id="profile-email"
+                        name="email"
+                        class="form-control"
+                        value="user@example.com"
+                        required
+                    >
+                </div>
+
+                <div>
+                    <label for="profile-username" class="form-label">
+                        Имя пользователя
+                    </label>
+                    <input
+                        type="text"
+                        id="profile-username"
+                        name="username"
+                        class="form-control"
+                        value="Anna"
+                        required
+                    >
+                </div>
+
+                <div>
+                    <label for="profile-avatar" class="form-label">
+                        Новая аватарка
+                    </label>
+                    <input
+                        type="file"
+                        id="profile-avatar"
+                        name="avatar"
+                        class="form-control"
+                        accept="image/*"
+                    >
+                </div>
+
+                <button type="submit" class="btn btn-primary">
+                    Сохранить изменения
+                </button>
+            </form>
+        </section>
+        <aside class="sidebar">
+                <h2>Популярные теги</h2>
+                <p>Python, HTML, CSS, C++</p>
+
+                <h2>Лучшие участники</h2>
+                <p>Кто-то</p>
+        </aside>
+    </main>
+    <footer class="footer">
+        <p>Aski Haski</p>
+    </footer>
+    <script src="static/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
