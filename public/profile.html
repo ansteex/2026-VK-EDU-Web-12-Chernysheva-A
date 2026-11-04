@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Aski Haski</title>
+    <title>Настройки профиля Aski Haski</title>
+    <link rel="icon" type="image/png" href="static/img/avatar6.png">
 
     <link rel="stylesheet" href="static/css/bootstrap.min.css">
     <link rel="stylesheet" href="static/css/style.css">
@@ -19,8 +20,16 @@
         </div>
         <div class="header-actions">
             <a href="ask.html">Задать вопрос</a>
-            <a href="profile.html">Anna</a>
-            <a href="login.html">Выйти</a>
+
+            <div class="user-block">
+                <img
+                    class="header-avatar"
+                    src="static/img/avatar.png"
+                    alt="Аватар пользователя Anna"
+                >
+                <a href="profile.html">Anna</a>
+                <a href="login.html">Выйти</a>
+            </div>
         </div>
     </header>
     <main>
@@ -80,11 +89,24 @@
             </form>
         </section>
         <aside class="sidebar">
+            <section class="sidebar-block">
                 <h2>Популярные теги</h2>
-                <p>Python, HTML, CSS, C++</p>
-
+                <div class="tag-list">
+                    <a href="#">Python</a>
+                    <a href="#">HTML</a>
+                    <a href="#">CSS</a>
+                    <a href="#">C++</a>
+                    <a href="#">Django</a>
+                </div>
+            </section>
+            <section class="sidebar-block">
                 <h2>Лучшие участники</h2>
-                <p>Кто-то</p>
+                <ul class="best-members">
+                    <li><a href="#">Кто-то1</a></li>
+                    <li><a href="#">Кто-то2</a></li>
+                    <li><a href="#">Кто-то3</a></li>
+                </ul>
+            </section>
         </aside>
     </main>
     <footer class="footer">

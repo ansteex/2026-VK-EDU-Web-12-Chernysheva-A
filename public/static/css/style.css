@@ -48,7 +48,7 @@ article{
     width: 100%;
     padding: 10px;
 }
-.header-actions a {
+.header-actions > a {
     color: white;
     background-color: midnightblue;
     padding: 10px 15px;
@@ -72,6 +72,25 @@ main {
 .sidebar {
     flex: 1;
     min-width: 0;
+}
+.sidebar-block {
+    margin-bottom: 30px;
+}
+.tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+.tag-list a {
+    padding: 5px 10px;
+    background-color: aliceblue;
+    border-radius: 8px;
+}
+.best-members {
+    padding-left: 20px;
+}
+.best-members li {
+    margin-bottom: 8px;
 }
 article img {
     width: 60px;
@@ -194,4 +213,124 @@ form {
     align-items: flex-start;
     gap: 5px;
     margin-bottom: 16px;
+}
+.signup-page,
+.login-page,
+.question-main {
+    flex: 2;
+    min-width: 0;
+}
+* {
+    box-sizing: border-box;
+}
+
+.class-header {
+    padding: 15px 20px;
+}
+
+.header-actions {
+    gap: 10px;
+}
+
+.question-text {
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
+.pagination {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.pagination a {
+    min-width: 36px;
+    padding: 6px 10px;
+    text-align: center;
+    border: 1px solid lightgray;
+    border-radius: 6px;
+}
+@media (max-width: 768px) {
+    .class-header {
+        flex-wrap: wrap;
+    }
+
+    .search-bar {
+        order: 3;
+        flex-basis: 100%;
+    }
+
+    main {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .sidebar {
+        width: 100%;
+    }
+}
+@media (max-width: 375px) {
+    .class-header {
+        padding: 12px;
+    }
+
+    .logo a {
+        font-size: 22px;
+    }
+
+    .header-actions {
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .header-actions a {
+        text-align: center;
+    }
+
+    main {
+        margin: 20px auto;
+        padding: 0 12px;
+        gap: 20px;
+    }
+
+    article,
+    form {
+        padding: 12px;
+    }
+
+    .question-content,
+    .answer-content {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    article img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .votes {
+        flex-wrap: wrap;
+    }
+    .user-block {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+}
+.user-block {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.user-block a {
+    padding: 4px;
+    background: none;
+    color: midnightblue;
+}
+.header-avatar {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 50%;
 }
