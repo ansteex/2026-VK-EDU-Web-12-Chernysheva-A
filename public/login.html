@@ -34,9 +34,15 @@
                     type="text"
                     id="username"
                     name="username"
-                    class="form-control"
+                    class="form-control is-invalid"
                     required
                 >
+                <div class="invalid-feedback">
+                    Пользователь с таким именем не найден.
+                </div>
+                <div class="form-text">
+                    Введите никнейм, указанный при регистрации.
+                </div>
 
                 <label for="password" class="form-label">Пароль:</label>
                 <input
@@ -46,6 +52,9 @@
                     class="form-control"
                     required
                 >
+                <div class="form-text">
+                    Пароль чувствителен к регистру.
+                </div>
 
                 <button type="submit" class="btn save-button">Войти</button>
                 <a href="signup.html">Ещё нет аккаунта? Зарегистрироваться</a>

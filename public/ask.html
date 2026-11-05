@@ -25,21 +25,30 @@
     <main>
         <section class="ask-page">
             <h2>Новый вопрос</h2>
+            <div class="alert alert-danger" role="alert">
+                Вопрос не был добавлен. Проверьте заполненные поля.
+            </div>
              <form>
                 <label for="question-title" class="form-label">Заголовок вопроса:</label>
                 <input type="text"
-                    class="form-control"
+                    class="form-control is-invalid"
                     id="question-title"
                     name="question-title"
                     maxlength="150"
                     placeholder="Кратко сформулируйте вопрос"
                     required>
+                <div class="invalid-feedback">
+                    Заголовок должен содержать не менее 5 символов.
+                </div>
                 <div class="form-text">
                     Максимум 150 символов.
                 </div>
 
                 <label for="question-text" class="form-label">Текст вопроса:</label>
                 <textarea id="question-text" name="question-text" rows="5" class="form-control" required></textarea>
+                <div class="form-text">
+                    Опишите свой вопрос подробно.
+                </div>
 
                 <label for="question-tags" class="form-label">Теги (через запятую):</label>
                 <input

@@ -35,6 +35,9 @@
     <main>
         <section class="profile-page">
             <h1>Настройки профиля</h1>
+            <div class="alert alert-danger" role="alert">
+                Не удалось сохранить изменения. Проверьте введённые данные.
+            </div>
 
             <form>
                 <p>Текущая аватарка:</p>
@@ -50,10 +53,13 @@
                         type="email"
                         id="profile-email"
                         name="email"
-                        class="form-control"
+                        class="form-control is-invalid"
                         value="user@example.com"
                         required
                     >
+                    <div class="invalid-feedback">
+                        Введите корректный email.
+                    </div>
                 </div>
 
                 <div>
@@ -68,6 +74,9 @@
                         value="Anna"
                         required
                     >
+                    <div class="form-text">
+                        Имя пользователя должно содержать от 3 до 30 символов.
+                    </div>
                 </div>
 
                 <div>
@@ -81,6 +90,9 @@
                         class="form-control"
                         accept="image/*"
                     >
+                    <div class="form-text">
+                        Допустимые форматы: jpg и png.
+                    </div>
                 </div>
 
                 <button type="submit" class="btn save-button">

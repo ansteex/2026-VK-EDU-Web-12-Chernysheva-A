@@ -175,9 +175,7 @@ form {
     min-width: 0;
 }
 .login-page{
-    flex:1;
-    color: midnightblue;
-    background-color: aliceblue;
+    flex: 1;
 }
 .main-content {
     flex: 2;
