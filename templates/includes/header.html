@@ -1,0 +1,46 @@
+{% load static %}
+
+<header class="class-header">
+    <div class="logo">
+        <a href="{% url 'questions:index' %}">
+            Aski Haski
+        </a>
+    </div>
+
+    <div class="search-bar">
+        <input
+            type="search"
+            name="search"
+            placeholder="Поиск"
+        >
+    </div>
+
+    <div class="header-actions">
+        <a href="{% url 'questions:ask' %}">
+            Задать вопрос
+        </a>
+
+        {% if is_authenticated %}
+            <div class="user-block">
+                <img
+                    class="header-avatar"
+                    src="{% static 'img/avatar.png' %}"
+                    alt="Аватар пользователя Anna"
+                >
+                <a href="{% url 'core:profile' %}">
+                    Anna
+                </a>
+                <a href="{% url 'core:login' %}">
+                    Выйти
+                </a>
+            </div>
+        {% else %}
+            <a href="{% url 'core:login' %}">
+                Войти
+            </a>
+            <a href="{% url 'core:signup' %}">
+                Регистрация
+            </a>
+        {% endif %}
+    </div>
+</header>

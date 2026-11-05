@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Регистрация — Aski Haski
+{% endblock %}
+
+{% block content %}
+    <section class="signup-page">
+        <h1>Регистрация</h1>
+
+        <div class="alert alert-danger" role="alert">
+            Не удалось зарегистрироваться. Проверьте введённые данные.
+        </div>
+
+        <form>
+            <label for="email" class="form-label">Email</label>
+            <input
+                type="email"
+                id="email"
+                name="email"
+                class="form-control is-invalid"
+                required
+            >
+            <div class="invalid-feedback">Введите корректный email.</div>
+
+            <label for="username" class="form-label">
+                Имя пользователя
+            </label>
+            <input
+                type="text"
+                id="username"
+                name="username"
+                class="form-control"
+                required
+            >
+            <div class="form-text">
+                Используйте от 3 до 30 букв, цифр или символов подчёркивания.
+            </div>
+
+            <label for="avatar" class="form-label">Аватарка</label>
+            <input
+                type="file"
+                id="avatar"
+                name="avatar"
+                class="form-control"
+                accept="image/*"
+            >
+            <div class="form-text">
+                Допустимые форматы: JPG и PNG. Максимальный размер — 5 МБ.
+            </div>
+
+            <label for="password" class="form-label">Пароль</label>
+            <input
+                type="password"
+                id="password"
+                name="password"
+                class="form-control"
+                required
+            >
+            <div class="form-text">
+                Пароль должен содержать не менее 8 символов.
+            </div>
+
+            <label for="confirm-password" class="form-label">
+                Подтвердите пароль
+            </label>
+            <input
+                type="password"
+                id="confirm-password"
+                name="confirm_password"
+                class="form-control is-invalid"
+                required
+            >
+            <div class="invalid-feedback">
+                Введённые пароли не совпадают.
+            </div>
+
+            <button type="submit" class="btn save-button">
+                Зарегистрироваться
+            </button>
+            <a href="{% url 'core:login' %}">
+                Уже есть аккаунт? Войти
+            </a>
+        </form>
+    </section>
+{% endblock %}

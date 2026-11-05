@@ -1,13 +1,17 @@
-from django.http import HttpResponse
+from django.shortcuts import render
 
 
 def login_view(request):
-    return HttpResponse('Страница входа')
+    return render(request, 'core/login.html')
 
 
 def signup(request):
-    return HttpResponse('Страница регистрации')
+    return render(request, 'core/signup.html')
 
 
 def profile(request):
-    return HttpResponse('Настройки профиля')
+    return render(
+        request,
+        'core/profile.html',
+        {'is_authenticated': True},
+    )
