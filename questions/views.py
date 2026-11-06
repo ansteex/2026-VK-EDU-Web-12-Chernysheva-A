@@ -26,17 +26,25 @@ TAG_SETS = (
     ),
 )
 
+QUESTION_TITLES = (
+    'Как устроено виртуальное адресное пространство процесса?',
+    'Чем процесс отличается от потока?',
+    'В каких режимах может выполняться процесс?',
+    'Как операционная система планирует процессы?',
+    'Что происходит во время системного вызова?',
+)
+
 QUESTION_LIST = [
     {
         'id': number,
-        'title': f'Вопрос №{number}: как устроен процесс в операционной системе?',
+        'title': QUESTION_TITLES[(number - 1) % len(QUESTION_TITLES)],
         'text': (
             'Помогите разобраться с процессами, памятью и режимами '
             'выполнения в операционной системе.'
         ),
         'avatar': AVATARS[(number - 1) % len(AVATARS)],
         'rating': number % 11,
-        'answers_count': number % 5,
+        'answers_count': 35 if number == 1 else (number * 3) % 12,
         'created_at': '4 ноября 2026, 12:30',
         'vote_state': VOTE_STATES[(number - 1) % len(VOTE_STATES)],
         'tags': TAG_SETS[(number - 1) % len(TAG_SETS)],
@@ -44,22 +52,24 @@ QUESTION_LIST = [
     for number in range(1, 31)
 ]
 
-ANSWER_LIST = [
-    {
-        'id': number,
-        'author': f'Пользователь {number}',
-        'text': (
-            f'Ответ №{number}. Процесс может выполняться в пользовательском '
-            'режиме или в режиме ядра операционной системы.'
-        ),
-        'avatar': AVATARS[number % len(AVATARS)],
-        'rating': (65 - number) % 17,
-        'created_at': '4 ноября 2026, 13:00',
-        'vote_state': VOTE_STATES[number % len(VOTE_STATES)],
-        'is_correct': number == 1,
-    }
-    for number in range(1, 66)
-]
+
+def make_answers(question_id, answers_count):
+    return [
+        {
+            'id': number,
+            'author': f'Кто-то{number}',
+            'text': (
+                'Процесс может выполняться в пользовательском режиме '
+                'или в режиме ядра операционной системы.'
+            ),
+            'avatar': AVATARS[number % len(AVATARS)],
+            'rating': (answers_count - number) % 17,
+            'created_at': '4 ноября 2026, 13:00',
+            'vote_state': VOTE_STATES[number % len(VOTE_STATES)],
+            'is_correct': question_id == 1 and number == 1,
+        }
+        for number in range(1, answers_count + 1)
+    ]
 
 
 def paginate(objects_list, request, per_page=10):
@@ -127,7 +137,7 @@ def question_detail(request, question_id):
         raise Http404('Вопрос не найден')
 
     answers = sorted(
-        ANSWER_LIST,
+        make_answers(question_id, question['answers_count']),
         key=lambda answer: answer['rating'],
         reverse=True,
     )
