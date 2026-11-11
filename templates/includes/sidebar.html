@@ -1,0 +1,45 @@
+<aside class="sidebar">
+    <section class="sidebar-block">
+        <h2>Популярные теги</h2>
+
+        <div class="tag-list">
+            <a href="{% url 'questions:tag' tag='python' %}">
+                Python
+            </a>
+            <a href="{% url 'questions:tag' tag='html' %}">
+                HTML
+            </a>
+            <a href="{% url 'questions:tag' tag='css' %}">
+                CSS
+            </a>
+            <a href="{% url 'questions:tag' tag='cpp' %}">
+                C++
+            </a>
+            <a href="{% url 'questions:tag' tag='django' %}">
+                Django
+            </a>
+        </div>
+    </section>
+
+    <section class="sidebar-block">
+        <h2>Лучшие участники</h2>
+
+        <ul class="best-members">
+            <li>
+                <a href="{% url 'core:profile' %}">
+                    Кто-то1
+                </a>
+            </li>
+            <li>
+                <a href="{% url 'core:profile' %}">
+                    Кто-то2
+                </a>
+            </li>
+            <li>
+                <a href="{% url 'core:profile' %}">
+                    Кто-то3
+                </a>
+            </li>
+        </ul>
+    </section>
+</aside>

@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Вопросы по тегу {{ tag }} — Aski Haski
+{% endblock %}
+
+{% block content %}
+    <section class="questions">
+        <div class="d-flex align-items-center gap-3 mb-3">
+            <a href="{% url 'questions:index' %}">Все вопросы</a>
+            <h1 class="mb-0">Тег: {{ tag }}</h1>
+        </div>
+
+        {% include "questions/partials/question_list.html" %}
+    </section>
+{% endblock %}
