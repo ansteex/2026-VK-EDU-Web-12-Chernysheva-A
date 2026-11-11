@@ -10,8 +10,4 @@ def signup(request):
 
 
 def profile(request):
-    return render(
-        request,
-        'core/profile.html',
-        {'is_authenticated': True},
-    )
+    return render(request, 'core/profile.html')
