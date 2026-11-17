@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Регистрация Aski Haski</title>
+    <link rel="icon" type="image/png" href="static/img/avatar6.png">
+
+    <link rel="stylesheet" href="static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+    <header class="class-header">
+        <div class="logo">
+             <a href="index.html">Aski Haski</a>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Поиск">
+        </div>
+        <div class="header-actions">
+            <a href="ask.html">Задать вопрос</a>
+            <a href="login.html">Войти</a>
+            <a href="signup.html">Регистрация</a>
+        </div>
+    </header>
+    <main>
+        <section class="signup-page">
+            <h1>Регистрация</h1>
+            <div class="alert alert-danger" role="alert">
+                Не удалось зарегистрироваться. Проверьте введённые данные.
+            </div>
+            <form>
+                <label for="email" class="form-label">Email</label>
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    class="form-control is-invalid"
+                    required
+                >
+                <div class="invalid-feedback">
+                    Введите корректный email.
+                </div>
+                <label for="username" class="form-label">Имя пользователя</label>
+                <input type="text" id="username" name="username" class="form-control" required>
+                <div class="form-text">
+                    Введите от 3 до 30 символов.
+                </div>
+                <label for="avatar" class="form-label">Аватарка</label>
+                <input type="file" id="avatar" name="avatar" class="form-control" accept="image/*">
+                <div class="form-text">
+                    Допустимые форматы: jpg и png.
+                </div>
+                <label for="password" class="form-label">Пароль</label>
+                <input type="password" id="password" name="password" class="form-control" required>
+                <div class="form-text">
+                    Пароль должен содержать не менее 8 символов.
+                </div>
+                <label for="confirm_password" class="form-label">Подтвердите пароль</label>
+                <input type="password" id="confirm_password" name="confirm_password" class="form-control is-invalid" required>
+                <div class="invalid-feedback">
+                    Введённые пароли не совпадают.
+                </div>
+                <button type="submit" class="btn save-button">Зарегистрироваться</button>
+                <a href="login.html">Уже есть аккаунт? Войти</a>
+            </form>
+        </section>
+        <aside class="sidebar">
+            <section class="sidebar-block">
+                <h2>Популярные теги</h2>
+                <div class="tag-list">
+                    <a href="#">Python</a>
+                    <a href="#">HTML</a>
+                    <a href="#">CSS</a>
+                    <a href="#">C++</a>
+                    <a href="#">Django</a>
+                </div>
+            </section>
+            <section class="sidebar-block">
+                <h2>Лучшие участники</h2>
+                <ul class="best-members">
+                    <li><a href="#">Кто-то1</a></li>
+                    <li><a href="#">Кто-то2</a></li>
+                    <li><a href="#">Кто-то3</a></li>
+                </ul>
+            </section>
+        </aside>
+    </main>
+    <footer class="footer">
+        <p>Aski Haski</p>
+    </footer>
+    <script src="static/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
