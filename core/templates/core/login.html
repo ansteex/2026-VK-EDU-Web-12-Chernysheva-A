@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Авторизация — Aski Haski
+{% endblock %}
+
+{% block content %}
+    <section class="login-page">
+        <h1>Вход в систему</h1>
+
+        <div class="alert alert-danger" role="alert">
+            Неправильное имя пользователя или пароль.
+        </div>
+
+        <form>
+            <label for="username" class="form-label">
+                Имя пользователя:
+            </label>
+            <input
+                type="text"
+                id="username"
+                name="username"
+                class="form-control is-invalid"
+                required
+            >
+            <div class="invalid-feedback">
+                Пользователь с таким именем не найден.
+            </div>
+            <div class="form-text">
+                Введите никнейм, указанный при регистрации.
+            </div>
+
+            <label for="password" class="form-label">Пароль:</label>
+            <input
+                type="password"
+                id="password"
+                name="password"
+                class="form-control"
+                required
+            >
+            <div class="form-text">
+                Пароль чувствителен к регистру символов.
+            </div>
+
+            <button type="submit" class="btn save-button">Войти</button>
+            <a href="{% url 'core:signup' %}">
+                Ещё нет аккаунта? Зарегистрироваться
+            </a>
+        </form>
+    </section>
+{% endblock %}

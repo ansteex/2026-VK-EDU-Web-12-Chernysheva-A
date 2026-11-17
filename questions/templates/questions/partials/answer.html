@@ -1,0 +1,44 @@
+{% load static %}
+
+<article class="answer">
+    <div class="answer-content">
+        <img
+            src="{% static answer.avatar %}"
+            alt="Аватар автора ответа"
+        >
+
+        <div class="question-text">
+            <h3>Ответ {{ answer.author }}</h3>
+            <p>{{ answer.text }}</p>
+
+            <label>
+                <input
+                    type="checkbox"
+                    {% if answer.is_correct %}checked{% endif %}
+                    disabled
+                >
+                Правильный ответ
+            </label>
+        </div>
+    </div>
+
+    <div class="question-meta">
+        <time>{{ answer.created_at }}</time>
+    </div>
+
+    <div class="votes">
+        <span class="vote-count">{{ answer.rating }}</span>
+        <button
+            type="button"
+            class="vote-button{% if answer.vote_state == 'liked' %} liked{% endif %}"
+        >
+            +
+        </button>
+        <button
+            type="button"
+            class="vote-button{% if answer.vote_state == 'disliked' %} disliked{% endif %}"
+        >
+            -
+        </button>
+    </div>
+</article>

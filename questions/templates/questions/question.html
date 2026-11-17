@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %}
+    {{ question.title }} — Aski Haski
+{% endblock %}
+
+{% block content %}
+    <div class="question-main">
+        <section class="question-page">
+            <h1>Вопрос</h1>
+            {% include "questions/partials/question.html" with question=question %}
+        </section>
+
+        <section class="answers">
+            <h2>Ответы</h2>
+
+            {% for answer in answers %}
+                {% include "questions/partials/answer.html" with answer=answer %}
+            {% empty %}
+                <p>Ответов пока нет.</p>
+            {% endfor %}
+
+            {% include "questions/partials/pagination.html" with page_obj=page_obj %}
+
+            <form>
+                <label for="answer" class="form-label">Ваш ответ:</label>
+                <textarea
+                    id="answer"
+                    name="answer"
+                    rows="5"
+                    class="form-control"
+                    required
+                ></textarea>
+                <button type="submit" class="btn save-button">
+                    Ответить
+                </button>
+            </form>
+        </section>
+    </div>
+{% endblock %}

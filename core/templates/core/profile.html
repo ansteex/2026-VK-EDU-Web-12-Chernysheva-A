@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+    Настройки профиля — Aski Haski
+{% endblock %}
+
+{% block content %}
+    <section class="profile-page">
+        <h1>Настройки профиля</h1>
+
+        <div class="alert alert-danger" role="alert">
+            Не удалось сохранить изменения. Проверьте введённые данные.
+        </div>
+
+        <form>
+            <p>Текущая аватарка:</p>
+            <img
+                src="{% static 'img/avatar.png' %}"
+                class="profile-avatar"
+                alt="Текущая аватарка пользователя"
+            >
+
+            <div>
+                <label for="profile-email" class="form-label">Email</label>
+                <input
+                    type="email"
+                    id="profile-email"
+                    name="email"
+                    class="form-control is-invalid"
+                    value="user@example.com"
+                    required
+                >
+                <div class="invalid-feedback">
+                    Введите корректный email.
+                </div>
+            </div>
+
+            <div>
+                <label for="profile-username" class="form-label">
+                    Имя пользователя
+                </label>
+                <input
+                    type="text"
+                    id="profile-username"
+                    name="username"
+                    class="form-control"
+                    value="Anna"
+                    required
+                >
+                <div class="form-text">
+                    Имя пользователя должно содержать от 3 до 30 символов.
+                </div>
+            </div>
+
+            <div>
+                <label for="profile-avatar" class="form-label">
+                    Новая аватарка
+                </label>
+                <input
+                    type="file"
+                    id="profile-avatar"
+                    name="avatar"
+                    class="form-control"
+                    accept="image/*"
+                >
+                <div class="form-text">
+                    Допустимые форматы: jpg и png.
+                </div>
+            </div>
+
+            <button type="submit" class="btn save-button">
+                Сохранить изменения
+            </button>
+        </form>
+    </section>
+{% endblock %}

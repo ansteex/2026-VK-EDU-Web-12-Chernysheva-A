@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Главная — Aski Haski
+{% endblock %}
+
+{% block content %}
+    <section class="questions">
+        <div class="d-flex align-items-center gap-3 mb-3">
+            <h1 class="mb-0">Новые вопросы</h1>
+            <a href="{% url 'questions:hot' %}">Лучшие вопросы</a>
+        </div>
+
+        {% include "questions/partials/question_list.html" %}
+    </section>
+{% endblock %}
