@@ -3,12 +3,12 @@
 <article class="answer">
     <div class="answer-content">
         <img
-            src="{% static answer.avatar %}"
+            src="{% static answer.author.profile.avatar %}"
             alt="Аватар автора ответа"
         >
 
         <div class="question-text">
-            <h3>Ответ {{ answer.author }}</h3>
+            <h3>Ответ {{ answer.author.username }}</h3>
             <p>{{ answer.text }}</p>
 
             <label>
@@ -23,20 +23,20 @@
     </div>
 
     <div class="question-meta">
-        <time>{{ answer.created_at }}</time>
+        <time>{{ answer.created_at|date:"d.m.Y H:i" }}</time>
     </div>
 
     <div class="votes">
         <span class="vote-count">{{ answer.rating }}</span>
         <button
             type="button"
-            class="vote-button{% if answer.vote_state == 'liked' %} liked{% endif %}"
+            class="vote-button"
         >
             +
         </button>
         <button
             type="button"
-            class="vote-button{% if answer.vote_state == 'disliked' %} disliked{% endif %}"
+            class="vote-button"
         >
             -
         </button>

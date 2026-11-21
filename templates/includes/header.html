@@ -28,7 +28,7 @@
                     alt="Аватар пользователя Anna"
                 >
                 <a href="{% url 'core:profile' %}">
-                    Anna
+                    {{ user.username }}
                 </a>
                 <a href="{% url 'core:login' %}">
                     Выйти
