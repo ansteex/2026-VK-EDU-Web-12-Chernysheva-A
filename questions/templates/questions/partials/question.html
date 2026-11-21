@@ -3,29 +3,30 @@
 <article>
     <div class="question-content">
         <img
-            src="{% static question.avatar %}"
+            src="{% static question.author.profile.avatar %}"
             alt="Аватар автора"
         >
 
         <div class="question-text">
             <h2>
-                <a href="{% url 'questions:question' question_id=question.id %}">
+                <a href="{{ question.get_absolute_url }}">
                     {{ question.title }}
                 </a>
             </h2>
 
             <p>{{ question.text }}</p>
+            <p>Автор: {{ question.author.username }}</p>
 
             <div class="question-meta">
-                <time>{{ question.created_at }}</time>
-                <a href="{% url 'questions:question' question_id=question.id %}">
+                <time>{{ question.created_at|date:"d.m.Y H:i" }}</time>
+                <a href="{{ question.get_absolute_url }}">
                     Ответы: {{ question.answers_count }}
                 </a>
             </div>
 
             <p>
                 Теги:
-                {% for tag in question.tags %}
+                {% for tag in question.tags.all %}
                     <a href="{% url 'questions:tag' tag=tag.slug %}">
                         {{ tag.name }}
                     </a>
@@ -38,13 +39,13 @@
         <span class="vote-count">{{ question.rating }}</span>
         <button
             type="button"
-            class="vote-button{% if question.vote_state == 'liked' %} liked{% endif %}"
+            class="vote-button"
         >
             +
         </button>
         <button
             type="button"
-            class="vote-button{% if question.vote_state == 'disliked' %} disliked{% endif %}"
+            class="vote-button"
         >
             -
         </button>

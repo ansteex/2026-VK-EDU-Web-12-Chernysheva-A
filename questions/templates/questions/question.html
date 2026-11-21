@@ -17,7 +17,7 @@
             {% for answer in answers %}
                 {% include "questions/partials/answer.html" with answer=answer %}
             {% empty %}
-                <p>Ответов пока нет.</p>
+                <p>Пока нет ни одного ответа к этому вопросу.</p>
             {% endfor %}
 
             {% include "questions/partials/pagination.html" with page_obj=page_obj %}
