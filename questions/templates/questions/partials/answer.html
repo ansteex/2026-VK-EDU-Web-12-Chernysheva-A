@@ -1,6 +1,6 @@
 {% load static %}
 
-<article class="answer">
+<article class="answer" id="answer-{{ answer.id }}">
     <div class="answer-content">
         <img
             src="{% static answer.author.profile.avatar %}"
@@ -31,12 +31,18 @@
         <button
             type="button"
             class="vote-button"
+            {% if not user.is_authenticated %}
+                disabled title="Войдите, чтобы поставить оценку"
+            {% endif %}
         >
             +
         </button>
         <button
             type="button"
             class="vote-button"
+            {% if not user.is_authenticated %}
+                disabled title="Войдите, чтобы поставить оценку"
+            {% endif %}
         >
             -
         </button>
