@@ -1,3 +1,58 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import Answer, AnswerLike, Question, QuestionLike, Tag
+
+
+class AnswerInline(admin.TabularInline):
+    model = Answer
+    extra = 0
+    raw_id_fields = ('author',)
+    show_change_link = True
+
+
+@admin.register(Question)
+class QuestionAdmin(admin.ModelAdmin):
+    list_display = ('title', 'author', 'rating', 'created_at')
+    search_fields = ('title', 'text', 'author__username')
+    list_filter = ('created_at', 'tags')
+    raw_id_fields = ('author',)
+    filter_horizontal = ('tags',)
+    inlines = (AnswerInline,)
+    list_select_related = ('author',)
+
+
+@admin.register(Answer)
+class AnswerAdmin(admin.ModelAdmin):
+    list_display = ('short_text', 'question', 'author', 'rating', 'is_correct')
+    search_fields = ('text', 'question__title', 'author__username')
+    list_filter = ('is_correct', 'created_at')
+    raw_id_fields = ('question', 'author')
+    list_select_related = ('question', 'author')
+
+    @admin.display(description='Текст')
+    def short_text(self, answer):
+        return answer.text[:50]
+
+
+@admin.register(Tag)
+class TagAdmin(admin.ModelAdmin):
+    list_display = ('name', 'slug')
+    search_fields = ('name', 'slug')
+
+
+@admin.register(QuestionLike)
+class QuestionLikeAdmin(admin.ModelAdmin):
+    list_display = ('user', 'question', 'value')
+    search_fields = ('user__username', 'question__title')
+    list_filter = ('value',)
+    raw_id_fields = ('user', 'question')
+    list_select_related = ('user', 'question')
+
+
+@admin.register(AnswerLike)
+class AnswerLikeAdmin(admin.ModelAdmin):
+    list_display = ('user', 'answer', 'value')
+    search_fields = ('user__username', 'answer__text')
+    list_filter = ('value',)
+    raw_id_fields = ('user', 'answer')
+    list_select_related = ('user', 'answer')
